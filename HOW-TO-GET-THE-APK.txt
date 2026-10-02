@@ -1,0 +1,40 @@
+PIGGY BANK – HOW TO GET THE .APK FILE (free, about 10 minutes, no software needed)
+================================================================================
+GitHub's free build computers turn this project into PiggyBank.apk for you.
+
+1. Go to https://github.com and create a free account (or sign in).
+2. Top right "+"  >  "New repository". Name it  piggy-bank-app  >  Create repository.
+3. On the new repository page click "uploading an existing file".
+4. Unzip PiggyBank-Android-Project.zip on your computer. Open the "PiggyBank"
+   folder, select EVERYTHING inside it (including the ".github" folder) and drag
+   it onto the GitHub page. Click "Commit changes".
+   (Windows hides the .github folder: in File Explorer choose View > Show > Hidden items.)
+5. Click the "Actions" tab. A build named "Build Piggy Bank APK" starts by itself
+   (if asked, click "I understand my workflows, go ahead and enable them", then
+   open the workflow and press "Run workflow"). Wait 3–5 minutes for the green tick.
+6. Open the finished run. Under "Artifacts" click  PiggyBank-APK  to download.
+   Unzip it – inside is  PiggyBank.apk.
+
+INSTALL ON MOTO G73 / REDMI PAD
+7. Copy PiggyBank.apk to the phone/tablet (USB cable, Google Drive, WhatsApp to yourself).
+8. Tap the file. When Android asks, allow "Install unknown apps" for that app
+   (Files / Drive / Chrome), then tap Install.
+   Redmi Pad: if MIUI/HyperOS shows a security check, tap "Install anyway".
+9. The pink pig icon "Piggy Bank" appears on the home screen. Works fully offline.
+
+UPDATING LATER
+- Replace app/src/main/assets/index.html with the new dashboard file, and in
+  app/build.gradle.kts raise versionCode by 1 (1 -> 2 -> 3 ...). Upload/commit;
+  GitHub builds a new APK. Installing it over the old one KEEPS all the data,
+  because every build is signed with the same key (app/piggybank.keystore).
+- Don't delete or replace piggybank.keystore, or updates won't install over the
+  old app (you'd have to uninstall, which erases the data – back up first).
+
+DATA
+- Exports, CSV, PNG and backups are saved to the Downloads/PiggyBank folder.
+- "Backup & email" opens Android's share menu (Gmail, WhatsApp, Drive…).
+- Restore: Data > Restore from backup, then pick the .json file.
+- If moving from the browser version: Data > Download backup there, then Restore here.
+
+NOTE: the signing passwords are in app/build.gradle.kts. That's fine for a family
+app you install yourself; use your own private key if you ever publish on Google Play.
